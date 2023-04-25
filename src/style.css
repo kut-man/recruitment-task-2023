@@ -35,3 +35,45 @@ body {
 }
 
 /* place your styles below */
+
+*{
+  box-sizing: border-box;
+}
+
+.verticalSplitter {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.horizontalSplitter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.verticalSplitter>div {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+
+.horizontalSplitter>div {
+  display: inline-block;
+  width: 100%;
+  height: 50%;
+}
+
+.contentTile {
+  display: inline-block;
+  margin: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border-radius: 10px;
+  background-color: #1b1c2e;
+  color: white;
+  text-align: center;
+  object-fit: cover;
+}

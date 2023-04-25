@@ -1,7 +1,8 @@
-import * as React from 'react';
-import './style.css';
-import { ElementsType } from './model';
-import { RenderElement } from './renderElement';
+import * as React from "react";
+import "./style.css";
+import { ElementsType } from "./model";
+import RenderElement from "./RenderElement";
+import { Context } from "./Context";
 
 export default function App() {
   // load definition here
@@ -10,21 +11,24 @@ export default function App() {
 
   React.useEffect(() => {
     const render = async () => {
-      let uri = "http://localhost:3500/rootElement"
+      let uri = "http://localhost:8080/rootElement";
       const res = await fetch(uri);
-      const data = await res.json()
+      const data = await res.json();
       setData(data);
-    }
+    };
     render();
+  }, []);
 
-  }, [])
+  console.log(data);
 
   return (
     <div className="main">
       {/* TODO remove title usage from template */}
-      <h1>{'Place you components here 👇'}</h1>
+      <h1>{"Place you components here 👇"}</h1>
       <div className="content">
-        {data ? RenderElement(data) : null}
+        <Context.Provider value={[data, setData]}>
+          {data ? <RenderElement element={data} /> : <p>Loading...</p>}
+        </Context.Provider>
       </div>
     </div>
   );

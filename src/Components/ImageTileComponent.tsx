@@ -1,11 +1,6 @@
-import '../style.css';
-import { ImageTile } from '../model';
+import "../style.css";
+import { ImageTile } from "../model";
 
-export function ImageTileComponent({ title, source }: ImageTile) {
-  return (
-    <div>
-      <h2>{title}</h2>
-      <img src={source} alt={title} />
-    </div>
-  );
+export default function ImageTileComponent({ title, source }: ImageTile) {
+  return <img className="contentTile" src={source} alt={title} />;
 }
