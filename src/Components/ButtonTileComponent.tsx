@@ -1,8 +1,7 @@
-import { useContext } from "react";
 import "../style.css";
-import { ButtonTile } from "../model";
 import { Context } from "../App";
-import { Action } from "../model";
+import { useContext } from "react";
+import { ButtonTile, Action } from "../model";
 
 export default function ButtonTileComponent({ text, action }: ButtonTile) {
   const setData = useContext(Context);

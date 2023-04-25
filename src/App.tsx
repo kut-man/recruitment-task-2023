@@ -13,10 +13,14 @@ export default function App() {
 
   React.useEffect(() => {
     const render = async () => {
-      let uri = "http://localhost:8080/rootElement";
-      const res = await fetch(uri);
-      const data = await res.json();
-      setData(data);
+      try {
+        let uri = "http://localhost:8080/rootElement";
+        const res = await fetch(uri);
+        const data = await res.json();
+        setData(data);
+      } catch (error) {
+        console.error(error);
+      }
     };
     render();
   }, []);

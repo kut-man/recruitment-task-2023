@@ -66,7 +66,7 @@ body {
   height: 50%;
 }
 
-.contentTile, .textTile {
+.contentTile {
   display: inline-block;
   margin: 5px;
   width: calc(100% - 10px);
