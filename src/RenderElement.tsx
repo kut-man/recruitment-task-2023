@@ -5,8 +5,7 @@ import TextTileComponent from "./Components/TextTileComponent";
 import ButtonTile from "./Components/ButtonTileComponent";
 import { ElementsType } from "./model";
 
-export default function RenderElement({element}: any) {
-  console.log(element);
+export const RenderElement = (element: ElementsType) => {
   switch (element.type) {
     case "imageTile":
       return <ImageTileComponent {...element} />;
@@ -21,4 +20,4 @@ export default function RenderElement({element}: any) {
     default:
       return null;
   }
-}
+};

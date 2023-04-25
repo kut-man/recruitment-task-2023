@@ -1,16 +1,14 @@
 import "../style.css";
-import { VerticalSplitter } from "../model";
-import RenderElement from "../RenderElement";
+import { VerticalSplitter, ElementsType } from "../model";
+import { RenderElement } from "../RenderElement";
 
-export default function VerticalSplitterComponent(data: VerticalSplitter) {
-  const elements = data.elements;
+export default function VerticalSplitterComponent({
+  elements,
+}: VerticalSplitter) {
   return (
     <div className="verticalSplitter">
-      {elements.map((element) => (
-        <div key={element.elementKey}>
-          {" "}
-          <RenderElement element={element} />{" "}
-        </div>
+      {elements.map((element: ElementsType) => (
+        <div key={element.elementKey}>{RenderElement(element)}</div>
       ))}
     </div>
   );
