@@ -1,4 +1,4 @@
-# recruitment-task-2023
+# Solution for internship recruitment task 2023 ❤️🏆
 ## Goal
 
 Prepare react application that will render **any** interactive card layout based on provided json definition that consists of known elements types(described below). By default, the element takes all available space. This space can be managed with dedicated elements(splitters). Every element has its own unique `elementKey`.
